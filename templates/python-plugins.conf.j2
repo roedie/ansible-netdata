@@ -14,18 +14,6 @@
 {% if option.config_file is defined %}
   config_file: {{ option.config_file }}
 {% endif %}
-{% if option.keyring_file is defined %}
-  keyring_file: {{ option.keyring_file }}
-{% endif %}
-{% if option.priority is defined %}
-  priority: {{ option.priority }}
-{% endif %}
-{% if option.retries is defined %}
-  retries: {{ option.retries }}
-{% endif %}
-{% if option.update_every is defined %}
-  update_every: {{ option.update_every }}
-{% endif %}
 {% if option.database is defined %}
   database: {{ option.database }}
 {% endif %}
@@ -34,6 +22,9 @@
 {% endif %}
 {% if option.index_stats is defined %}
   index_stats: {{ option.index_stats }}
+{% endif %}
+{% if option.keyring_file is defined %}
+  keyring_file: {{ option.keyring_file }}
 {% endif %}
 {% if option.name is defined %}
   name: {{ option.name }}
@@ -53,6 +44,12 @@
 {% if option.port is defined %}
   port: {{ option.port }}
 {% endif %}
+{% if option.priority is defined %}
+  priority: {{ option.priority }}
+{% endif %}
+{% if option.retries is defined %}
+  retries: {{ option.retries }}
+{% endif %}
 {% if option.scheme is defined %}
   scheme: {{ option.scheme }}
 {% endif %}
@@ -61,6 +58,9 @@
 {% endif %}
 {% if option.table_stats is defined %}
   table_stats: {{ option.table_stats }}
+{% endif %}
+{% if option.update_every is defined %}
+  update_every: {{ option.update_every }}
 {% endif %}
 {% if option.url is defined %}
   url: {{ option.url }}
