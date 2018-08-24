@@ -9,5 +9,6 @@ Just a first stab at this role. Not for production usage yet.
 * couchdb
 * chrony
 * cpufreq
+* dns_query_time
 * haproxy
 * postgresql

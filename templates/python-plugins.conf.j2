@@ -2,6 +2,9 @@
 {% if item.options is defined %}
 {% for option in item.options %}
 {{ option.job_name }}:
+{% if option.aggregate is defined %}
+  aggregate: {{ option.aggregate }}
+{% endif %}
 {% if option.autodetection_retry is defined %}
   autodetection_retry: {{ option.autodetection_retry }}
 {% endif %}
@@ -16,6 +19,12 @@
 {% endif %}
 {% if option.database is defined %}
   database: {{ option.database }}
+{% endif %}
+{% if option.dns_servers is defined %}
+  dns_servers: {{ option.dns_servers }}
+{% endif %}
+{% if option.domains is defined %}
+  domains: {{ option.domains }}
 {% endif %}
 {% if option.host is defined %}
   host: {{ option.host }}
@@ -46,6 +55,9 @@
 {% endif %}
 {% if option.priority is defined %}
   priority: {{ option.priority }}
+{% endif %}
+{% if option.response_timeout is defined %}
+  response_timeout: {{ option.response_timeout }}
 {% endif %}
 {% if option.retries is defined %}
   retries: {{ option.retries }}
