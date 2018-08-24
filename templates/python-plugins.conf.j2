@@ -2,6 +2,9 @@
 {% if item.options is defined %}
 {% for option in item.options %}
 {{ option.job_name }}:
+{% if option.autodetection_retry is defined %}
+  autodetection_retry: {{ option.autodetection_retry }}
+{% endif %}
 {% if option.priority is defined %}
   priority: {{ option.priority }}
 {% endif %}
