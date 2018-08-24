@@ -11,6 +11,12 @@
 {% if option.chart_cleanup is defined %}
   chart_cleanup: {{ option.chart_cleanup }}
 {% endif %}
+{% if option.cluster_health is defined %}
+  cluster_health: {{ option.cluster_health }}
+{% endif %}
+{% if option.cluster_stats is defined %}
+  cluster_stats: {{ option.cluster_stats}}
+{% endif %}
 {% if option.command is defined %}
   command: {{ option.command }}
 {% endif %}

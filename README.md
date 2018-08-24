@@ -11,5 +11,6 @@ Just a first stab at this role. Not for production usage yet.
 * cpufreq
 * dns_query_time
 * dovecot
+* elasticsearch
 * haproxy
 * postgresql
