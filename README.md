@@ -8,5 +8,6 @@ Just a first stab at this role. Not for production usage yet.
 * ceph
 * couchdb
 * chrony
+* cpufreq
 * haproxy
 * postgresql
