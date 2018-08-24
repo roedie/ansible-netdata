@@ -6,5 +6,6 @@ apache
 beanstalk
 bind_rndc
 ceph
+chrony
 haproxy
 postgresql
