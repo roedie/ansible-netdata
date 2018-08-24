@@ -8,6 +8,12 @@
 {% if option.chart_cleanup is defined %}
   chart_cleanup: {{ option.chart_cleanup }}
 {% endif %}
+{% if option.config_file is defined %}
+  config_file: {{ option.config_file }}
+{% endif %}
+{% if option.keyring_file is defined %}
+  keyring_file: {{ option.keyring_file }}
+{% endif %}
 {% if option.priority is defined %}
   priority: {{ option.priority }}
 {% endif %}

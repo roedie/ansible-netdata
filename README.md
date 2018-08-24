@@ -5,5 +5,6 @@ Just a first stab at this role. Not for production usage yet.
 apache
 beanstalk
 bind_rndc
+ceph
 haproxy
 postgresql
