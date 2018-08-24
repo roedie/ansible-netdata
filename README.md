@@ -12,5 +12,6 @@ Just a first stab at this role. Not for production usage yet.
 * dns_query_time
 * dovecot
 * elasticsearch
+* exim
 * haproxy
 * postgresql
