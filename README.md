@@ -10,5 +10,6 @@ Just a first stab at this role. Not for production usage yet.
 * chrony
 * cpufreq
 * dns_query_time
+* dovecot
 * haproxy
 * postgresql
