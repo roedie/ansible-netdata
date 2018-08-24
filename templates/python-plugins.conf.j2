@@ -5,6 +5,9 @@
 {% if option.autodetection_retry is defined %}
   autodetection_retry: {{ option.autodetection_retry }}
 {% endif %}
+{% if option.chart_cleanup is defined %}
+  chart_cleanup: {{ option.chart_cleanup }}
+{% endif %}
 {% if option.priority is defined %}
   priority: {{ option.priority }}
 {% endif %}
