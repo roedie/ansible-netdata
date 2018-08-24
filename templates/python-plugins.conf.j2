@@ -41,6 +41,9 @@
 %{ if option.named_stats_path is defined %}
   named_stats_path: {{ option.named_stats_path }}
 {% endif %}
+{% if option.node is defined %}
+  node: {{ option.node }}
+{% endif %}
 {% if option.pass is defined %}
   user: {{ option.pass }}
 {% endif %}
@@ -49,6 +52,9 @@
 {% endif %}
 {% if option.port is defined %}
   port: {{ option.port }}
+{% endif %}
+{% if option.scheme is defined %}
+  scheme: {{ option.scheme }}
 {% endif %}
 {% if option.socket is defined %}
   socket: {{ option.socket }}
