@@ -1,0 +1,25 @@
+# netdata stream configuration
+
+{% if netdata_stream_node == 'master' %}
+[{{ netdata_stream_api_key }}]
+    enabled = {{ netdata_stream_enabled }}
+    default history = {{ netdata_stream_default_history }}
+    default memory = {{ netdata_stream_default_memory }}
+    health enabled by default = {{ netdata_stream_health_enabled_by_default }}
+{% for key in netdata_stream_custom %}
+    {{ key }} = {{ netdata_statsd_custom[key] }}
+{% endfor %}
+{% endif %}
+{% if netdata_stream_node == 'slave' %}
+[stream]
+    enabled = {{ netdata_stream_enabled }}
+    destination = {{ netdata_stream_master_node }}:{{ netdata_web_default_port }}
+    api key = {{ netdata_stream_api_key }}
+{% for key in netdata_stream_custom %}
+    {{ keys }} = {{ netdata_stream_custom[key] }}
+{% endfor %}
+{% endif %}
+{% if netdata_stream_node == 'none' %}
+[stream]
+    enabled = no
+{% endif %}

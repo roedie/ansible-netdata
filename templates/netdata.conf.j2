@@ -1,0 +1,77 @@
+# netdata configuration
+#
+# You can download the latest version of this file, using:
+#
+#  wget -O /etc/netdata/netdata.conf http://localhost:19999/netdata.conf
+# or
+#  curl -o /etc/netdata/netdata.conf http://localhost:19999/netdata.conf
+#
+# You can uncomment and change any of the options below.
+# The value shown in the commented settings, is the default value.
+#
+
+# global netdata configuration
+
+[global]
+        run as user = {{ netdata_global_run_as_user}}
+        history = {{ netdata_global_history}}
+        update every = {{ netdata_global_update_every }}
+        memory mode = {{ netdata_global_memory_mode }}
+        memory deduplication (ksm) = {{ netdata_global_memory_deduplication }}
+        timezone = {{ netdata_global_timezone }}
+        hostname = {{ ansible_hostname }}
+{% for key in netdata_global_custom %}
+        {{ key }} = {{ netdata_global_custom[key] }}
+{% endfor %}
+
+[web]
+        web files group = {{ netdata_web_web_files_group }}
+        web files owner = {{ netdata_web_web_files_owner }}
+        bind to = {{ netdata_web_bind_to }}
+        mode = {{ netdata_web_mode }}
+        default port = {{ netdata_web_default_port }}
+        web server threads = {{ netdata_web_web_server_threads }}
+        web server max sockets = {{ netdata_web_web_server_max_sockets }}
+{% for key in netdata_web_custom %}
+        {{ key }} = {{ netdata_web_custom[key] }}
+{% endfor %}
+
+[plugins]
+
+{% for key in netdata_plugins_custom %}
+        {{ key }} = {{ netdata_plugins_custom[key] }}
+{% endfor %}
+
+[health]
+        enabled = {{ netdata_health_enabled }}
+        script to execute on alarm = {{ netdata_health_script_to_execute_on_alarm }}
+        health configuration directory = {{ netdata_health_health_configuration_directory }}
+{% for key in netdata_health_custom %}
+        {{ key }} = {{ netdata_health_custom[key] }}
+{% endfor %}
+
+[registry]
+        enabled = {{ netdata_registry_enabled }}
+{% for key in netdata_registry_custom %}
+        {{ key }} = {{ netdata_registry_custom }}
+{% endfor %}
+
+[backend]
+        enabled = {{ netdata_backend_enabled }}
+        data source = {{ netdata_backend_data_source }}
+        type = {{ netdata_backend_type }}
+        destination = {{ netdata_backend_destination }}
+        prefix = {{ netdata_backend_prefix }}
+        update every = {{ netdata_backend_update_every }}
+        send charts matching = {{ netdata_backend_send_charts_matching }}
+        send names instead of ids = {{ netdata_backend_send_names_instead_of_ids }}
+        send hosts matching = {{ netdata_backend_send_hosts_matching }}
+{% for key in netdata_backend_custom %}
+        {{ key }} = {{ netdata_backend_custom[key] }}
+{% endfor %}
+
+[statsd]
+        enabled = {{ netdata_statsd_enabled }}
+{% for key in netdata_statsd_custom %}
+        {{ key }} = {{ netdata_statsd_custom[key] }}
+{% endfor %}

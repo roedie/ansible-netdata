@@ -1,0 +1,111 @@
+---
+# defaults file for ansible-netdata
+
+netdata_config_file: '/etc/netdata/netdata.conf'
+netdata_stream_file: '/etc/netdata/stream.conf'
+netdata_python_d_conf: '/etc/netdata/python.d.conf'
+
+# [global]
+netdata_global_run_as_user: netdata
+netdata_global_history: 3600
+netdata_global_update_every: 1
+netdata_global_memory_mode: ram
+netdata_global_memory_deduplication: yes
+netdata_global_timezone: 'Europe/Amsterdam'
+netdata_global_custom: {}
+
+# [web]
+netdata_web_web_files_group: root
+netdata_web_web_files_owner: root
+netdata_web_bind_to: '*'
+netdata_web_mode: 'static-threaded'
+netdata_web_default_port: 19999
+netdata_web_web_server_threads: 6
+netdata_web_web_server_max_sockets: 32768
+netdata_web_custom: {}
+
+# [plugins]
+netdata_plugins_custom: {}
+
+# [health]
+netdata_health_enabled: yes
+netdata_health_script_to_execute_on_alarm: '/usr/lib/x86_64-linux-gnu/netdata/plugins.d/alarm-notify.sh'
+netdata_health_health_configuration_directory: '/etc/netdata/health.d'
+netdata_health_custom: {}
+
+# [registry]
+netdata_registry_enabled: no
+netdata_registry_custom: {}
+
+# [backend]
+netdata_backend_enabled: no
+netdata_backend_data_source: average
+netdata_backend_type: graphite
+netdata_backend_destination: 'tcp:127.0.0.1:2003'
+netdata_backend_prefix: netdata
+netdata_backend_update_every: 10
+netdata_backend_send_charts_matching: '*'
+netdata_backend_send_names_instead_of_ids: yes
+netdata_backend_send_hosts_matching: '*'
+netdata_backend_custom: {}
+
+# [statsd]
+netdata_statsd_enabled: yes
+netdata_statsd_custom: {}
+
+# Stream
+
+# Stream node: master|slave|none
+netdata_stream_node: none
+netdata_stream_api_key: 'ec9be874-ee81-4e2a-8796-c5f5c6704c4d'
+netdata_stream_enabled: yes
+netdata_stream_default_history: 3600
+netdata_stream_default_memory: save
+netdata_stream_health_enabled_by_default: auto
+netdata_stream_master_node: 'master.node.example.com'
+
+# python.d.conf
+
+netdata_python_enabled: yes
+netdata_python_logs_per_interval: 200
+netdata_python_log_interval: 300
+netdata_python_default_run: no
+netdata_python_apache_cache: no
+netdata_python_apache: no
+netdata_python_bind_rndc: no
+netdata_python_cpufreq: yes
+netdata_python_cpuidle: yes
+netdata_python_dovecot: no
+netdata_python_elasticsearch: no
+netdata_python_exim: yes
+netdata_python_fail2ban: no
+netdata_python_freeradius: no
+netdata_python_haproxy: no
+netdata_python_hddtemp: no
+netdata_python_ipfs: no
+netdata_python_isc_dhcpd: no
+netdata_python_mdstat: yes
+netdata_python_memcached: no
+netdata_python_mysql: no
+netdata_python_nginx: no
+netdata_python_ovpn_status_log: no
+netdata_python_phpfpm: no
+netdata_python_postfix: yes
+netdata_python_postgres: no
+netdata_python_redis: no
+netdata_python_retroshare: no
+netdata_python_sensors: no
+netdata_python_smartd_log: no
+netdata_python_squid: no
+netdata_python_tomcat: no
+netdata_python_varnish: no
+netdata_python_web_log: no
+netdata_python_custom: {}
+
+netdata_debian_pkgs:
+  - netdata
+  - netdata-data
+  - python3-psycopg2
+  - curl
+  - fping
+  - nodejs

@@ -1,0 +1,30 @@
+---
+- name: configure | Configuring netdata
+  template:
+    src: netdata.conf.j2
+    dest: "{{ netdata_config_file }}"
+    owner: "{{ netdata_global_run_as_user }}"
+    group: root
+    mode: u=rx,g=rx
+  notify: restart netdata
+  become: true
+
+- name: configure | Configure stream
+  template:
+    src: stream.conf.j2
+    dest: "{{ netdata_stream_file }}"
+    owner: "{{ netdata_global_run_as_user }}"
+    group: root
+    mode: u=rx,g=rx
+  notify: restart netdata
+  become: true
+
+- name: configure | Configure python.d.conf
+  template:
+    src: python.d.conf.j2
+    dest: "{{ netdata_python_d_conf }}"
+    owner: "{{ netdata_global_run_as_user }}"
+    group: root
+    mode: u=rx,g=rx
+  notify: restart netdata
+  become: true
