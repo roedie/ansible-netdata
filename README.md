@@ -2,11 +2,11 @@
 Just a first stab at this role. Not for production usage yet.
 
 ## Supported plugins
-apache
-beanstalk
-bind_rndc
-ceph
-couchdb
-chrony
-haproxy
-postgresql
+* apache
+* beanstalk
+* bind_rndc
+* ceph
+* couchdb
+* chrony
+* haproxy
+* postgresql
