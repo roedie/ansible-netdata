@@ -1,0 +1,48 @@
+#{{ ansible_managed }}
+{% if item.options is defined %}
+{% for option in item.options %}
+{{ option.job_name }}:
+{% if option.priority is defined %}
+  priority: {{ option.priority }}
+{% endif %}
+{% if option.retries is defined %}
+  retries: {{ option.retries }}
+{% endif %}
+{% if option.update_every is defined %}
+  update_every: {{ option.update_every }}
+{% endif %}
+{% if option.database is defined %}
+  database: {{ option.database }}
+{% endif %}
+{% if option.host is defined %}
+  host: {{ option.host }}
+{% endif %}
+{% if option.index_stats is defined %}
+  index_stats: {{ option.index_stats }}
+{% endif %}
+{% if option.name is defined %}
+  name: {{ option.name }}
+{% endif %}
+{% if option.pass is defined %}
+  user: {{ option.pass }}
+{% endif %}
+{% if option.password is defined %}
+  password: {{ option.password }}
+{% endif %}
+{% if option.port is defined %}
+  port: {{ option.port }}
+{% endif %}
+{% if option.socket is defined %}
+  socket: {{ option.socket }}
+{% endif %}
+{% if option.table_stats is defined %}
+  table_stats: {{ option.table_stats }}
+{% endif %}
+{% if option.url is defined %}
+  url: {{ option.url }}
+{% endif %}
+{% if option.user is defined %}
+  user: {{ option.user }}
+{% endif %}
+{% endfor %}
+{% endif %}

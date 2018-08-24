@@ -5,7 +5,7 @@
     dest: "{{ netdata_config_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=rx,g=rx
+    mode: u=r,g=r
   notify: restart netdata
   become: true
 
@@ -15,7 +15,7 @@
     dest: "{{ netdata_stream_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=rx,g=rx
+    mode: u=r,g=r
   notify: restart netdata
   become: true
 
@@ -25,6 +25,18 @@
     dest: "{{ netdata_python_d_conf }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=rx,g=rx
+    mode: u=r,g=r
+  notify: restart netdata
+  become: true
+
+- name: configure | Configure plugins
+  template:
+    src: python-plugins.conf.j2
+    dest: "{{ netdata_python_d }}/{{ item.name }}.conf"
+    owner: "{{ netdata_global_run_as_user }}"
+    group: root
+    mode: u=r,g=r
+  when: netdata_plugin_conf is defined
+  with_items: "{{ netdata_plugin_conf }}"
   notify: restart netdata
   become: true

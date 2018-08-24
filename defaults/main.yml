@@ -4,12 +4,13 @@
 netdata_config_file: '/etc/netdata/netdata.conf'
 netdata_stream_file: '/etc/netdata/stream.conf'
 netdata_python_d_conf: '/etc/netdata/python.d.conf'
+netdata_python_d: '/etc/netdata/python.d'
 
 # [global]
 netdata_global_run_as_user: netdata
 netdata_global_history: 3600
 netdata_global_update_every: 1
-netdata_global_memory_mode: ram
+netdata_global_memory_mode: 'ram'
 netdata_global_memory_deduplication: yes
 netdata_global_timezone: 'Europe/Amsterdam'
 netdata_global_custom: {}
@@ -39,8 +40,8 @@ netdata_registry_custom: {}
 
 # [backend]
 netdata_backend_enabled: no
-netdata_backend_data_source: average
-netdata_backend_type: graphite
+netdata_backend_data_source: 'average'
+netdata_backend_type: 'graphite'
 netdata_backend_destination: 'tcp:127.0.0.1:2003'
 netdata_backend_prefix: netdata
 netdata_backend_update_every: 10
@@ -56,12 +57,12 @@ netdata_statsd_custom: {}
 # Stream
 
 # Stream node: master|slave|none
-netdata_stream_node: none
+netdata_stream_node: 'none'
 netdata_stream_api_key: 'ec9be874-ee81-4e2a-8796-c5f5c6704c4d'
 netdata_stream_enabled: yes
 netdata_stream_default_history: 3600
-netdata_stream_default_memory: save
-netdata_stream_health_enabled_by_default: auto
+netdata_stream_default_memory: 'save'
+netdata_stream_health_enabled_by_default: 'auto'
 netdata_stream_master_node: 'master.node.example.com'
 
 # python.d.conf
@@ -101,6 +102,39 @@ netdata_python_tomcat: no
 netdata_python_varnish: no
 netdata_python_web_log: no
 netdata_python_custom: {}
+
+#netdata_plugin_conf:
+#  - name: haproxy
+#    options:
+#      - job_name: 'via_url'
+#        user: 'admin'
+#        pass: 'pipo'
+#      - job_name: 'via_socket'
+#        socket: '/run/haproxy.sock'
+#  - name: postgres
+#    options:
+#      - job_name: 'socket'
+#        name: 'local'
+#        user: 'postgres'
+#        database: 'postgres'
+#      - job_name: tcp
+#        name: 'local'
+#        database: 'postgres'
+#        user: 'postgres'
+#        host: 'localhost'
+#        port: 5432
+#      - job_name: tcpipv4
+#        name: 'local'
+#        database: 'postgres'
+#        user: 'postgres'
+#        host: '127.0.0.1'
+#        port: 5432
+#      - job_name: tcpipv6
+#        name: 'local'
+#        database: 'postgres'
+#        user: 'postgres'
+#        host: '::1'
+#        port: 5432
 
 netdata_debian_pkgs:
   - netdata
