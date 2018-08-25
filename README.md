@@ -1,5 +1,5 @@
 # ansible-netdata
-Just a first stab at this role. Not for production usage yet.
+Ansible role to install netdata from the Debian repository. Currently only Debian Stretch is supporter.
 
 ## Supported plugins
 All plugins can be customised except for:
