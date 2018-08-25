@@ -2,92 +2,22 @@
 {% if item.options is defined %}
 {% for option in item.options %}
 {{ option.job_name }}:
-{% if option.aggregate is defined %}
-  aggregate: {{ option.aggregate }}
-{% endif %}
-{% if option.autodetection_retry is defined %}
-  autodetection_retry: {{ option.autodetection_retry }}
-{% endif %}
-{% if option.chart_cleanup is defined %}
-  chart_cleanup: {{ option.chart_cleanup }}
-{% endif %}
-{% if option.cluster_health is defined %}
-  cluster_health: {{ option.cluster_health }}
-{% endif %}
-{% if option.cluster_stats is defined %}
-  cluster_stats: {{ option.cluster_stats}}
-{% endif %}
-{% if option.command is defined %}
-  command: {{ option.command }}
-{% endif %}
-{% if option.config_file is defined %}
-  config_file: {{ option.config_file }}
-{% endif %}
-{% if option.database is defined %}
-  database: {{ option.database }}
-{% endif %}
-{% if option.dns_servers is defined %}
-  dns_servers: {{ option.dns_servers }}
-{% endif %}
-{% if option.domains is defined %}
-  domains: {{ option.domains }}
-{% endif %}
-{% if option.host is defined %}
-  host: {{ option.host }}
-{% endif %}
-{% if option.index_stats is defined %}
-  index_stats: {{ option.index_stats }}
-{% endif %}
-{% if option.keyring_file is defined %}
-  keyring_file: {{ option.keyring_file }}
-{% endif %}
-{% if option.name is defined %}
-  name: {{ option.name }}
-{% endif %}
-{% if option.named_stats_path is defined %}
-  named_stats_path: {{ option.named_stats_path }}
-{% endif %}
-{% if option.node is defined %}
-  node: {{ option.node }}
-{% endif %}
-{% if option.pass is defined %}
-  user: {{ option.pass }}
-{% endif %}
-{% if option.password is defined %}
-  password: {{ option.password }}
-{% endif %}
-{% if option.port is defined %}
-  port: {{ option.port }}
+{% if option.update_every is defined %}
+  update_every: {{ option.update_every }}
 {% endif %}
 {% if option.priority is defined %}
   priority: {{ option.priority }}
 {% endif %}
-{% if option.response_timeout is defined %}
-  response_timeout: {{ option.response_timeout }}
-{% endif %}
 {% if option.retries is defined %}
   retries: {{ option.retries }}
 {% endif %}
-{% if option.scheme is defined %}
-  scheme: {{ option.scheme }}
+{% if option.chart_cleanup is defined %}
+  chart_cleanup: {{ option.chart_cleanup }}
 {% endif %}
-{% if option.socket is defined %}
-  socket: {{ option.socket }}
-{% endif %}
-{% if option.sys_dir is defined %}
-  sys_dir: {{ option.sys_dir }}
-{% endif %}
-{% if option.table_stats is defined %}
-  table_stats: {{ option.table_stats }}
-{% endif %}
-{% if option.update_every is defined %}
-  update_every: {{ option.update_every }}
-{% endif %}
-{% if option.url is defined %}
-  url: {{ option.url }}
-{% endif %}
-{% if option.user is defined %}
-  user: {{ option.user }}
+{% if option.settings is defined %}
+{% for setting in option.settings %}
+  {{ setting }}
+{% endfor %}
 {% endif %}
 {% endfor %}
 {% endif %}

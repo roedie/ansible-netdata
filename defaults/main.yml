@@ -107,10 +107,16 @@ netdata_python_custom: {}
 #  - name: haproxy
 #    options:
 #      - job_name: 'via_url'
-#        user: 'admin'
-#        pass: 'pipo'
+#        update_every: '1'
+#        priority: '60000'
+#        retries: '5'
+#        chart_cleanup: '10'
+#        settings:
+#          - "user: admin"
+#          - "pass: pipo"
 #      - job_name: 'via_socket'
-#        socket: '/run/haproxy.sock'
+#        settings:
+#          - "socket: /run/haproxy.sock"
 #  - name: postgres
 #    options:
 #      - job_name: 'socket'
