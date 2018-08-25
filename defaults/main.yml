@@ -1,10 +1,16 @@
 ---
 # defaults file for ansible-netdata
 
+# Config file locations
 netdata_config_file: '/etc/netdata/netdata.conf'
 netdata_stream_file: '/etc/netdata/stream.conf'
 netdata_python_d_conf: '/etc/netdata/python.d.conf'
 netdata_python_d: '/etc/netdata/python.d'
+
+# Config for netdata.conf per section
+# Most normal used options are templated.
+# If any option not templated is needed you can set them
+# with th netdata_*_custom setting.
 
 # [global]
 netdata_global_run_as_user: netdata
@@ -14,6 +20,11 @@ netdata_global_memory_mode: 'ram'
 netdata_global_memory_deduplication: yes
 netdata_global_timezone: 'Europe/Amsterdam'
 netdata_global_custom: {}
+  # hostname: 'wonko-the-sane'
+  # 'glibc malloc arena max for plugins': 1
+  # 'libc malloc arena max for netdata': 1
+  # 'config directory': '/etc/netdata'
+  # etc....
 
 # [web]
 netdata_web_web_files_group: root
@@ -55,7 +66,8 @@ netdata_statsd_enabled: yes
 netdata_statsd_custom: {}
 
 # Stream
-
+# /etc/netdata/stream.conf settings
+#
 # Stream node: master|slave|none
 netdata_stream_node: 'none'
 netdata_stream_api_key: 'ec9be874-ee81-4e2a-8796-c5f5c6704c4d'
@@ -102,6 +114,7 @@ netdata_python_tomcat: no
 netdata_python_varnish: no
 netdata_python_web_log: no
 netdata_python_custom: {}
+  # zfs: no
 
 #netdata_plugin_conf:
 #  - name: haproxy
