@@ -2,16 +2,9 @@
 Just a first stab at this role. Not for production usage yet.
 
 ## Supported plugins
-* apache
-* beanstalk
-* bind_rndc
-* ceph
-* couchdb
-* chrony
-* cpufreq
-* dns_query_time
-* dovecot
-* elasticsearch
-* exim
-* haproxy
-* postgresql
+All plugins except:
+
+* dnsdist
+* powerdns
+
+Or other plugins with the same setup.
