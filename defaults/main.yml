@@ -155,6 +155,12 @@ netdata_python_custom: {}
 #        host: '::1'
 #        port: 5432
 
+#netdata_plugin:
+#  - name: 'sytemp.entropy'
+#    settings:
+#      enabled: 'no'
+#      history: '3600'
+
 netdata_debian_pkgs:
   - netdata
   - netdata-data

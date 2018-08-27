@@ -78,3 +78,12 @@
 {% for key in netdata_statsd_custom %}
         {{ key }} = {{ netdata_statsd_custom[key] }}
 {% endfor %}
+
+{% if netdata_plugin is defined %}
+{% for i in netdata_plugin %}
+[{{ i.name }}]
+{% for key in i.settings %}
+        {{ key }}: {{ i.settings[key] }}
+{% endfor %}
+{% endfor %}
+{% endif %}
