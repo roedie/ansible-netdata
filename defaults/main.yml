@@ -125,11 +125,11 @@ netdata_python_custom: {}
 #        retries: '5'
 #        chart_cleanup: '10'
 #        settings:
-#          - "user: admin"
-#          - "pass: pipo"
+#          user: admin
+#          pass: pipo
 #      - job_name: 'via_socket'
 #        settings:
-#          - "socket: /run/haproxy.sock"
+#          socket: /run/haproxy.sock
 #  - name: postgres
 #    options:
 #      - job_name: 'socket'

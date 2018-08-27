@@ -36,7 +36,7 @@
     owner: "{{ netdata_global_run_as_user }}"
     group: root
     mode: u=r,g=r,o=
-  when: netdata_plugin_conf is defined
+  when: netdata_plugin_jobs is defined
   with_items: "{{ netdata_plugin_jobs }}"
   notify: restart netdata
   become: true
