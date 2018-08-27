@@ -116,7 +116,7 @@ netdata_python_web_log: no
 netdata_python_custom: {}
   # zfs: no
 
-#netdata_plugin_conf:
+#netdata_plugin_jobs:
 #  - name: haproxy
 #    options:
 #      - job_name: 'via_url'

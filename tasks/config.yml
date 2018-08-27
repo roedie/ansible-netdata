@@ -37,6 +37,6 @@
     group: root
     mode: u=r,g=r,o=
   when: netdata_plugin_conf is defined
-  with_items: "{{ netdata_plugin_conf }}"
+  with_items: "{{ netdata_plugin_jobs }}"
   notify: restart netdata
   become: true
