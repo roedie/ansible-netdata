@@ -76,6 +76,7 @@ netdata_stream_default_history: 3600
 netdata_stream_default_memory: 'save'
 netdata_stream_health_enabled_by_default: 'auto'
 netdata_stream_master_node: 'master.node.example.com'
+netdata_stream_custom: {}
 
 # python.d.conf
 
