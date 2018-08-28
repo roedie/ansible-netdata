@@ -22,7 +22,7 @@
         memory mode = {{ netdata_global_memory_mode }}
         memory deduplication (ksm) = {{ netdata_global_memory_deduplication }}
         timezone = {{ netdata_global_timezone }}
-        hostname = {{ ansible_hostname }}
+        hostname = {{ inventory_hostname }}
 {% for key in netdata_global_custom %}
         {{ key }} = {{ netdata_global_custom[key] }}
 {% endfor %}
