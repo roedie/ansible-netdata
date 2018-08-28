@@ -5,7 +5,7 @@
     dest: "{{ netdata_config_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=r,g=r,o=
+    mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
 
@@ -15,7 +15,7 @@
     dest: "{{ netdata_stream_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=r,g=r,o=
+    mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
 
@@ -25,7 +25,7 @@
     dest: "{{ netdata_python_d_conf }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=r,g=r,o=
+    mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
 
@@ -35,7 +35,7 @@
     dest: "{{ netdata_python_d }}/{{ item.name }}.conf"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
-    mode: u=r,g=r,o=
+    mode: u=rw,g=rw,o=
   when: netdata_plugin_jobs is defined
   with_items: "{{ netdata_plugin_jobs }}"
   notify: restart netdata
