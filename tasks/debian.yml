@@ -1,4 +1,8 @@
 ---
+- name: debian | Update apt-cache
+  apt:
+    update_cache: yes
+
 - name: debian | Install Netdata
   apt:
     name: "{{ item }}"
