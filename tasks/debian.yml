@@ -5,7 +5,6 @@
 
 - name: debian | Install Netdata
   apt:
-    name: "{{ item }}"
+    name: "netdata_debian_pkgs"
     state: latest
   become: true
-  with_items: "{{ netdata_debian_pkgs }}"
