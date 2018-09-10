@@ -1,10 +1,7 @@
 ---
-- name: debian | Update apt-cache
-  apt:
-    update_cache: yes
-
 - name: debian | Install Netdata
   apt:
     name: "netdata_debian_pkgs"
     state: latest
+    update_cache: yes
   become: true
