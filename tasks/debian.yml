@@ -1,7 +1,13 @@
 ---
+- name: debian | Install Dependencies
+  apt:
+    name: "{{ netdata_debian_deps }}"
+    state: present
+    update_cache: yes
+  become: true
+
 - name: debian | Install Netdata
   apt:
     name: "{{ netdata_debian_pkgs }}"
     state: latest
-    update_cache: yes
   become: true

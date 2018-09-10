@@ -165,7 +165,11 @@ netdata_python_custom: {}
 netdata_debian_pkgs:
   - netdata
   - netdata-data
+netdata_debian_pkgs_state: 'latest'
+
+netdata_debian_deps:
   - python3-psycopg2
   - curl
   - fping
   - nodejs
+netdata_debian_deps_state: 'present'
