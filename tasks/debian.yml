@@ -3,7 +3,7 @@
   when: ansible_distribution_release == 'stretch'
   apt:
     name: "{{ netdata_debian_9_bp_deps }}"
-    state: present
+    state: latest
     update_cache: yes
     default_release: stretch-backports
   become: true
