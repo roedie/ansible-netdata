@@ -162,6 +162,7 @@ netdata_python_custom: {}
 #      enabled: 'no'
 #      history: '3600'
 
+netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
   - netdata-core
@@ -169,6 +170,7 @@ netdata_debian_pkgs:
   - netdata-plugins-python
   - netdata-plugins-nodejs
   - netdata-web
+  - python3-urllib3
 netdata_debian_pkgs_state: 'latest'
 
 netdata_debian_deps:
@@ -177,7 +179,3 @@ netdata_debian_deps:
   - fping
   - nodejs
 netdata_debian_deps_state: 'present'
-
-netdata_debian_9_bp_deps:
-  - python3-urllib3
-netdata_debian_9_bp_deps_state: 'present'

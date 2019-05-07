@@ -1,13 +1,4 @@
 ---
-- name: debian | Install Stretch Backports Dependencies
-  when: ansible_distribution_release == 'stretch'
-  apt:
-    name: "{{ netdata_debian_9_bp_deps }}"
-    state: latest
-    update_cache: yes
-    default_release: stretch-backports
-  become: true
-
 - name: debian | Install Dependencies
   apt:
     name: "{{ netdata_debian_deps }}"
@@ -19,4 +10,5 @@
   apt:
     name: "{{ netdata_debian_pkgs }}"
     state: latest
+    default_release: "{{ netdata_debian_release }}"
   become: true
