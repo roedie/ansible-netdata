@@ -162,9 +162,15 @@ netdata_python_custom: {}
 #      enabled: 'no'
 #      history: '3600'
 
+netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
-  - netdata-data
+  - netdata-core
+  - netdata-plugins-bash
+  - netdata-plugins-python
+  - netdata-plugins-nodejs
+  - netdata-web
+  - python3-urllib3
 netdata_debian_pkgs_state: 'latest'
 
 netdata_debian_deps:
