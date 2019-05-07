@@ -180,4 +180,4 @@ netdata_debian_deps_state: 'present'
 
 netdata_debian_9_bp_deps:
   - python3-urllib3
-netdata_debian_bp_deps_state: 'present'
+netdata_debian_9_bp_deps_state: 'present'
