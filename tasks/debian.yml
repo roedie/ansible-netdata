@@ -10,6 +10,5 @@
   apt:
     name: "{{ netdata_debian_pkgs }}"
     state: latest
-    default_release: "{{ netdata_debian_release }}"
   become: true
   notify: restart netdata
