@@ -15,42 +15,6 @@ log_interval: {{ netdata_python_log_interval }}
 
 default_run: {{ netdata_python_default_run }}
 
-apache_cache: {{ netdata_python_apache_cache }}
-apache: {{ netdata_python_apache }}
-bind_rndc: {{ netdata_python_bind_rndc }}
-cpufreq: {{ netdata_python_cpufreq }}
-cpuidle: {{ netdata_python_cpuidle }}
-dovecot: {{ netdata_python_dovecot }}
-elasticsearch: {{ netdata_python_elasticsearch }}
-exim: {{ netdata_python_exim }}
-fail2ban: {{ netdata_python_fail2ban }}
-freeradius: {{ netdata_python_freeradius }}
-
-# gunicorn_log has been replaced by web_log
-gunicorn_log: no
-haproxy: {{ netdata_python_haproxy }}
-hddtemp: {{ netdata_python_hddtemp }}
-ipfs: {{ netdata_python_ipfs }}
-isc_dhcpd: {{ netdata_python_isc_dhcpd }}
-mdstat: {{ netdata_python_mdstat }}
-memcached: {{ netdata_python_memcached }}
-mysql: {{ netdata_python_mysql }}
-nginx: {{ netdata_python_nginx }}
-
-# nginx_log has been replaced by web_log
-nginx_log: no
-ovpn_status_log: {{ netdata_python_ovpn_status_log }}
-phpfpm: {{ netdata_python_phpfpm }}
-postfix: {{ netdata_python_postfix }}
-postgres: {{ netdata_python_postgres }}
-redis: {{ netdata_python_redis }}
-retroshare: {{ netdata_python_retroshare }}
-sensors: {{ netdata_python_sensors }}
-smartd_log: {{ netdata_python_smartd_log }}
-squid: {{ netdata_python_squid }}
-tomcat: {{ netdata_python_tomcat }}
-varnish: {{ netdata_python_varnish }}
-web_log: {{ netdata_python_web_log }}
-{% for key in netdata_python_custom %}
-{{ key }} : {{ netdata_python_custom[key] }}
+{% for key in netdata_python_plugins %}
+{{ key }} : {{ netdata_python_plugins[key] }}
 {% endfor %}

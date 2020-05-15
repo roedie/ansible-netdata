@@ -18,6 +18,9 @@
     mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
+  when: netdata_stream_node == none or
+        netdata_stream_node == master or
+        netdata_stream_node == slave
 
 - name: configure | Configure python.d.conf
   template:
@@ -28,15 +31,16 @@
     mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
+  when: netdata_python_enabled is defined and netdata_python_enabled == yes
 
-- name: configure | Configure plugins
+- name: configure | Configure python plugins
   template:
     src: python-plugins.conf.j2
     dest: "{{ netdata_python_d }}/{{ item.name }}.conf"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
     mode: u=rw,g=rw,o=
-  when: netdata_plugin_jobs is defined
-  with_items: "{{ netdata_plugin_jobs }}"
+  with_items: "{{ netdata_python_plugin_jobs }}"
   notify: restart netdata
   become: true
+  when: netdata_python_plugin_jobs is defined
