@@ -31,7 +31,7 @@
     mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
-  when: netdata_python_enabled is defined and netdata_python_enabled == yes
+  when: netdata_python_enabled is defined
 
 - name: configure | Configure python plugins
   template:
