@@ -44,3 +44,9 @@
   notify: restart netdata
   become: true
   when: netdata_python_plugin_jobs is defined
+
+#- name: configure | Configure go.d.conf
+#...
+
+#- name: configure | Configure go plugins
+#...
