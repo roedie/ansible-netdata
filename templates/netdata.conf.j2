@@ -47,7 +47,6 @@
 
 [health]
         enabled = {{ netdata_health_enabled }}
-        script to execute on alarm = {{ netdata_health_script_to_execute_on_alarm }}
         health configuration directory = {{ netdata_health_health_configuration_directory }}
 {% for key in netdata_health_custom %}
         {{ key }} = {{ netdata_health_custom[key] }}

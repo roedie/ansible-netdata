@@ -41,7 +41,6 @@ netdata_plugins_custom: {}
 
 # [health]
 netdata_health_enabled: 'yes'
-netdata_health_script_to_execute_on_alarm: '/usr/lib/x86_64-linux-gnu/netdata/plugins.d/alarm-notify.sh'
 netdata_health_health_configuration_directory: '/etc/netdata/health.d'
 netdata_health_custom: {}
 
@@ -165,17 +164,9 @@ netdata_python_custom: {}
 #netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
-  - netdata-core
-  - netdata-plugins-bash
-  - netdata-plugins-python
-  - netdata-plugins-nodejs
-  - netdata-web
-  - python3-urllib3
-netdata_debian_pkgs_state: 'latest'
 
-netdata_debian_deps:
-  - python3-psycopg2
-  - curl
-  - fping
-  - nodejs
+netdata_debian_pkgs_state: 'present'
+
+#netdata_debian_deps: {}
+
 netdata_debian_deps_state: 'present'

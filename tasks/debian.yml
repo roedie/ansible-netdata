@@ -1,14 +1,16 @@
 ---
 - name: debian | Install Dependencies
   apt:
-    name: "{{ netdata_debian_deps }}"
+    name: "{{ item }}"
     state: present
     update_cache: yes
   become: true
+  loop: "{{ netdata_debian_deps }}"
+  when: netdata_debian_deps is defined and netdata_debian_deps
 
 - name: debian | Install Netdata
   apt:
     name: "{{ netdata_debian_pkgs }}"
-    state: latest
+    state: present
   become: true
   notify: restart netdata
