@@ -161,12 +161,12 @@ netdata_python_custom: {}
 #      enabled: 'no'
 #      history: '3600'
 
-#netdata_debian_release: stretch-backports
+# netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
 
 netdata_debian_pkgs_state: 'present'
 
-#netdata_debian_deps: {}
+# netdata_debian_deps: {}
 
 netdata_debian_deps_state: 'present'
