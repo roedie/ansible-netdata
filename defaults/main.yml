@@ -36,22 +36,22 @@ netdata_plugins_custom: {}
 # /etc/netdata/stream.conf settings
 #
 # Stream node: master|slave|none
-#netdata_stream_node: 'none'
-#netdata_stream_api_key: 'ec9be874-ee81-4e2a-8796-c5f5c6704c4d'
-#netdata_stream_enabled: 'yes'
-#netdata_stream_default_history: 3600
-#netdata_stream_default_memory: 'save'
-#netdata_stream_health_enabled_by_default: 'auto'
-#netdata_stream_master_node: 'master.node.example.com'
-#netdata_stream_custom: {}
+# netdata_stream_node: 'none'
+# netdata_stream_api_key: 'ec9be874-ee81-4e2a-8796-c5f5c6704c4d'
+# netdata_stream_enabled: 'yes'
+# netdata_stream_default_history: 3600
+# netdata_stream_default_memory: 'save'
+# netdata_stream_health_enabled_by_default: 'auto'
+# netdata_stream_master_node: 'master.node.example.com'
+# netdata_stream_custom: {}
 
 # python.d.conf
 
-#netdata_python_enabled: 'yes'
-#netdata_python_logs_per_interval: 200
-#netdata_python_log_interval: 300
-#netdata_python_default_run: 'no'
-#netdata_python_plugins: {}
+# netdata_python_enabled: 'yes'
+# netdata_python_logs_per_interval: 200
+# netdata_python_log_interval: 300
+# netdata_python_default_run: 'no'
+# netdata_python_plugins: {}
   # zfs: 'no'
 
 # netdata_plugin_jobs:
@@ -104,6 +104,6 @@ netdata_debian_pkgs:
   - netdata
 
 
-#netdata_debian_deps: {}
+# netdata_debian_deps: {}
 
 netdata_debian_deps_state: 'present'
