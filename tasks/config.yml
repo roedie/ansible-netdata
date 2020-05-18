@@ -18,9 +18,10 @@
     mode: u=rw,g=rw,o=
   notify: restart netdata
   become: true
-  when: netdata_stream_node == none or
+  when: netdata_stream_node is defined and (
+        netdata_stream_node == none or
         netdata_stream_node == master or
-        netdata_stream_node == slave
+        netdata_stream_node == slave)
 
 - name: configure | Configure python.d.conf
   template:
