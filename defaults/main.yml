@@ -17,11 +17,11 @@ netdata_global_run_as_user: 'netdata'
 netdata_global_history: 3600
 netdata_global_OOM_score: 1000
 netdata_global_settings: {}
-  # hostname: 'wonko-the-sane'
-  # 'glibc malloc arena max for plugins': 1
-  # 'libc malloc arena max for netdata': 1
-  # 'config directory': '/etc/netdata'
-  # etc....
+# hostname: 'wonko-the-sane'
+# 'glibc malloc arena max for plugins': 1
+# 'libc malloc arena max for netdata': 1
+# 'config directory': '/etc/netdata'
+# etc....
 
 # [web]
 netdata_web_web_files_group: 'root'
@@ -54,7 +54,7 @@ netdata_plugins_custom: {}
 #netdata_python_plugins: {}
   # zfs: 'no'
 
-#netdata_plugin_jobs:
+# netdata_plugin_jobs:
 #  - name: haproxy
 #    options:
 #      - job_name: 'via_url'
@@ -93,18 +93,17 @@ netdata_plugins_custom: {}
 #        host: '::1'
 #        port: 5432
 
-#netdata_plugin:
+# netdata_plugin:
 #  - name: 'sytemp.entropy'
 #    settings:
 #      enabled: 'no'
 #      history: '3600'
 
-#netdata_debian_release: stretch-backports
+# netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
 
-netdata_debian_pkgs_state: 'latest'
 
-netdata_debian_deps: {}
+#netdata_debian_deps: {}
 
 netdata_debian_deps_state: 'present'

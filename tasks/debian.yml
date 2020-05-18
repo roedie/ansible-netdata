@@ -3,12 +3,13 @@
   apt:
     name: "{{ netdata_debian_deps }}"
     state: present
-    update_cache: yes
+    update_cache: true
   become: true
+  when: netdata_debian_deps is defined and netdata_debian_deps
 
 - name: debian | Install Netdata
   apt:
     name: "{{ netdata_debian_pkgs }}"
-    state: latest
+    state: present
   become: true
   notify: restart netdata
