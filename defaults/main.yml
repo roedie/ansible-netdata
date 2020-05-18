@@ -20,11 +20,11 @@ netdata_global_memory_mode: 'ram'
 netdata_global_memory_deduplication: 'yes'
 netdata_global_timezone: 'Europe/Amsterdam'
 netdata_global_custom: {}
-  # hostname: 'wonko-the-sane'
-  # 'glibc malloc arena max for plugins': 1
-  # 'libc malloc arena max for netdata': 1
-  # 'config directory': '/etc/netdata'
-  # etc....
+# hostname: 'wonko-the-sane'
+# 'glibc malloc arena max for plugins': 1
+# 'libc malloc arena max for netdata': 1
+# 'config directory': '/etc/netdata'
+# etc....
 
 # [web]
 netdata_web_web_files_group: 'root'
@@ -114,9 +114,9 @@ netdata_python_tomcat: 'no'
 netdata_python_varnish: 'no'
 netdata_python_web_log: 'no'
 netdata_python_custom: {}
-  # zfs: 'no'
+# zfs: 'no'
 
-#netdata_plugin_jobs:
+# netdata_plugin_jobs:
 #  - name: haproxy
 #    options:
 #      - job_name: 'via_url'
@@ -155,7 +155,7 @@ netdata_python_custom: {}
 #        host: '::1'
 #        port: 5432
 
-#netdata_plugin:
+# netdata_plugin:
 #  - name: 'sytemp.entropy'
 #    settings:
 #      enabled: 'no'

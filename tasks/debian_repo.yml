@@ -1,5 +1,5 @@
 ---
-#curl -s https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh | sudo bash
+
 - name: Repo | Determine if netdata repo is installed
   stat:
     path: "/etc/apt/sources.list.d/netdata_netdata.list"

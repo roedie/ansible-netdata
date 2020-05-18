@@ -1,3 +1,5 @@
+---
+
 galaxy_info:
   author: Sander Klein
   description: Role to configure netdata
