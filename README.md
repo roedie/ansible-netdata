@@ -1,14 +1,7 @@
 # ansible-netdata
-Ansible role to install netdata from the Debian repository. Currently only Debian Stretch is supporter.
 
-## Supported plugins
-All plugins can be customised except for:
+[![Build Status](https://travis-ci.org/roedie/ansible-netdata.svg?branch=master)](https://travis-ci.org/roedie/ansible-netdata)
 
-* dnsdist
-* powerdns
-* go_expvar
-* httpcheck
-* isc_dhcpd
-* springboot
+Ansible role to install netdata from the official netdata repository.
 
-Or other plugins with the same setup as the above.
+Should not yet be used.
