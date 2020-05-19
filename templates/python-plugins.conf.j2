@@ -4,22 +4,22 @@
 {% if item.options is defined -%}
 {% for option in item.options %}
 {{ option.job_name }}:
-{% if option.update_every is defined -%}
+{%- if option.update_every is defined %}
   update_every: {{ option.update_every }}
-{% endif -%}
-{% if option.priority is defined -%}
+{%- endif %}
+{%- if option.priority is defined %}
   priority: {{ option.priority }}
-{% endif -%}
-{% if option.retries is defined -%}
+{%- endif %}
+{%- if option.retries is defined %}
   retries: {{ option.retries }}
-{% endif -%}
-{% if option.chart_cleanup is defined -%}
+{%- endif %}
+{%- if option.chart_cleanup is defined %}
   chart_cleanup: {{ option.chart_cleanup }}
-{% endif -%}
-{% if option.settings is defined -%}
-{% for setting in option.settings -%}
+{%- endif %}
+{%- if option.settings is defined -%}
+{%- for setting in option.settings %}
   {{ setting }}: '{{ option.settings[setting]}}'
-{% endfor -%}
+{%- endfor %}
 {% endif -%}
 {% endfor %}
 {% endif %}
