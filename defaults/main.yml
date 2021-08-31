@@ -165,7 +165,15 @@ netdata_python_custom: {}
 netdata_debian_pkgs:
   - netdata
 
-netdata_debian_pkgs_state: 'present'
+netdata_debian_del_pkgs:
+  - netdata
+  - netdata-core
+  - netdata-plugins-bash
+  - netdata-plugins-nodejs
+  - netdata-plugins-python
+  - netdata-web
+
+netdata_debian_pkgs_state: 'latest'
 
 # netdata_debian_deps: {}
 
