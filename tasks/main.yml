@@ -1,7 +1,7 @@
 ---
 
 - include: debian_repo.yml
-  when: ansible_os_family == "Debian"
+  when: ansible_os_family == "Debian" and netdata_configure_repo == true
 
 - include: debian.yml
   when: ansible_os_family == "Debian"

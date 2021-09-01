@@ -173,6 +173,8 @@ netdata_debian_del_pkgs:
   - netdata-plugins-python
   - netdata-web
 
+netdata_configure_repo: true
+
 netdata_debian_pkgs_state: 'latest'
 
 # netdata_debian_deps: {}
