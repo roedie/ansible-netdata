@@ -12,6 +12,7 @@
     name: "netdata"
     state: "restarted"
     enabled: true
+    masked: false
   become: true
 
 - name: start netdata
@@ -19,6 +20,7 @@
     name: "netdata"
     state: "started"
     enabled: true
+    masked: false
   become: true
 
 - name: stop netdata
@@ -26,4 +28,5 @@
     name: "netdata"
     state: "stopped"
     enabled: true
+    masked: false
   become: true

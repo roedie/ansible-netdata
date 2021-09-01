@@ -1,11 +1,4 @@
 ---
-- name: debian | Remove Debian version
-  apt:
-    name: "{{ netdata_debian_del_pkgs }}"
-    state: absent
-  become: true
-  when: not is_netdata_repo_installed.stat.exists
-
 - name: debian | Install Dependencies
   apt:
     name: "{{ netdata_debian_deps }}"
@@ -20,8 +13,3 @@
     state: "{{ netdata_debian_pkgs_state }}"
   become: true
   notify: restart netdata
-
-- name: debian | Enable Netdata
-  systemd:
-    name: netdata
-    masked: no
