@@ -20,3 +20,8 @@
     state: "{{ netdata_debian_pkgs_state }}"
   become: true
   notify: restart netdata
+
+- name: debian | Enable Netdata
+  systemd:
+    name: netdata
+    masked: no
