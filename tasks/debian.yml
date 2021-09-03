@@ -8,6 +8,8 @@
   when: netdata_debian_deps is defined and netdata_debian_deps
 
 - name: debian | Install Netdata
+  environment:
+    NEEDRESTART_SUSPEND: "true"
   apt:
     name: "{{ netdata_debian_pkgs }}"
     state: "{{ netdata_debian_pkgs_state }}"

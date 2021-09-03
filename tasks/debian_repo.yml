@@ -11,9 +11,9 @@
     dest: /tmp/script.deb.sh
     mode: '0700'
   become: true
-  when: is_netdata_repo_installed is defined and not is_netdata_repo_installed.stat.exists
+  when: is_netdata_repo_installed.stat.exists is not defined
 
 - name: Repo | Execute installer
   command: /tmp/script.deb.sh
   become: true
-  when: is_netdata_repo_installed is defined and not is_netdata_repo_installed.stat.exists
+  when: is_netdata_repo_installed.stat.exists is not defined
