@@ -164,6 +164,8 @@ netdata_python_custom: {}
 # netdata_debian_release: stretch-backports
 netdata_debian_pkgs:
   - netdata
+  - curl
+  - nodejs
 
 netdata_debian_del_pkgs:
   - netdata
