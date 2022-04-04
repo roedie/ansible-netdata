@@ -4,5 +4,4 @@
     netdata_stream_node: master
     netdata_stream_api_key: '7e5c93ba-4f72-40ea-90d1-f54225c62721'
   roles:
-    ansible-netdata
-  tasks:
+    - ansible-netdata
