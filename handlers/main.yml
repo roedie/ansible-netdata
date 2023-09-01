@@ -1,32 +1,36 @@
 ---
 # handlers file for ansible-netdata
 
-- name: reload systemd netdata
-  systemd:
+- name: Reload systemd netdata
+  ansible.builtin.systemd_service:
     name: "netdata"
     daemon_reload: true
   become: true
+  listen: netdata_systemd_reload
 
-- name: restart netdata
-  service:
+- name: Restart netdata
+  ansible.builtin.systemd_service:
     name: "netdata"
     state: "restarted"
     enabled: true
     masked: false
   become: true
+  listen: netdata_systemd_restart
 
-- name: start netdata
-  service:
+- name: Start Netdata
+  ansible.builtin.systemd_service:
     name: "netdata"
     state: "started"
     enabled: true
     masked: false
   become: true
+  listen: netdata_systemd_start
 
-- name: stop netdata
-  service:
+- name: Stop Netdata
+  ansible.builtin.systemd_service:
     name: "netdata"
     state: "stopped"
     enabled: true
     masked: false
   become: true
+  listen: netdata_systemd_stop

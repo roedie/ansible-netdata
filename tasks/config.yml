@@ -1,36 +1,36 @@
 ---
-- name: configure | Configuring netdata
-  template:
+- name: Configure | Configuring netdata
+  ansible.builtin.template:
     src: netdata.conf.j2
     dest: "{{ netdata_config_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
     mode: u=rw,g=rw,o=
-  notify: restart netdata
+  notify: netdata_systemd_restart
   become: true
 
-- name: configure | Configure stream
-  template:
+- name: Configure | Configure stream
+  ansible.builtin.template:
     src: stream.conf.j2
     dest: "{{ netdata_stream_file }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
     mode: u=rw,g=rw,o=
-  notify: restart netdata
+  notify: netdata_systemd_restart
   become: true
 
-- name: configure | Configure python.d.conf
-  template:
+- name: Configure | Configure python.d.conf
+  ansible.builtin.template:
     src: python.d.conf.j2
     dest: "{{ netdata_python_d_conf }}"
     owner: "{{ netdata_global_run_as_user }}"
     group: root
     mode: u=rw,g=rw,o=
-  notify: restart netdata
+  notify: netdata_systemd_restart
   become: true
 
-- name: configure | Configure plugins
-  template:
+- name: Configure | Configure plugins
+  ansible.builtin.template:
     src: python-plugins.conf.j2
     dest: "{{ netdata_python_d }}/{{ item.name }}.conf"
     owner: "{{ netdata_global_run_as_user }}"
@@ -38,5 +38,5 @@
     mode: u=rw,g=rw,o=
   when: netdata_plugin_jobs is defined
   with_items: "{{ netdata_plugin_jobs }}"
-  notify: restart netdata
+  notify: netdata_systemd_restart
   become: true

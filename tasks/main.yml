@@ -1,9 +1,15 @@
 ---
 
-- include: debian_repo.yml
-  when: ansible_os_family == "Debian" and netdata_configure_repo == true
+- name: Main - Configure Debian Repo
+  ansible.builtin.include_tasks:
+    file: debian_repo.yml
+  when: ansible_os_family == "Debian" and netdata_configure_repo
 
-- include: debian.yml
+- name: Main - Run Debian stuff
+  ansible.builtin.include_tasks:
+    file: debian.yml
   when: ansible_os_family == "Debian"
 
-- include: config.yml
+- name: Main - Configure Netdata
+  ansible.builtin.include_tasks:
+    file: config.yml

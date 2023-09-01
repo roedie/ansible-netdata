@@ -1,12 +1,12 @@
 ---
 
 - name: Repo | Determine if netdata repo is installed
-  stat:
+  ansible.builtin.stat:
     path: "/etc/apt/sources.list.d/netdata_netdata.list"
   register: is_netdata_repo_installed
 
 - name: Repo | Download installer script
-  get_url:
+  ansible.builtin.get_url:
     url: https://packagecloud.io/install/repositories/netdata/netdata/script.deb.sh
     dest: /tmp/script.deb.sh
     mode: '0700'
@@ -14,6 +14,7 @@
   when: is_netdata_repo_installed.stat.exists is not defined
 
 - name: Repo | Execute installer
-  command: /tmp/script.deb.sh
+  ansible.builtin.command:
+    cmd: /tmp/script.deb.sh
   become: true
   when: is_netdata_repo_installed.stat.exists is not defined
