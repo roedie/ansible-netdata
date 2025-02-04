@@ -36,6 +36,14 @@ netdata_web_web_server_threads: 6
 netdata_web_web_server_max_sockets: 32768
 netdata_web_custom: {}
 
+# [db]
+tier_0_retention: 14d
+tier_1_retention: 3mo
+tier_2_retention: 2y
+tier_0_storage: 1GiB
+tier_1_storage: 1GiB
+tier_2_storage: 1GiB
+
 # [plugins]
 netdata_plugins_custom: {}
 
