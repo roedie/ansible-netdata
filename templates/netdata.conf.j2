@@ -28,12 +28,12 @@
 {% endfor %}
 
 [db]
-        dbengine tier 0 retention time = {{ tier_0_retention }}
-        dbengine tier 0 retention time = {{ tier_1_retention }}
-        dbengine tier 0 retention time = {{ tier_2_retention }}
-        dbengine tier 0 retention size = {{ tier_0_storage }}
-        dbengine tier 0 retention size = {{ tier_1_storage }}
-        dbengine tier 0 retention size = {{ tier_2_storage }}
+        dbengine tier 0 retention time = {{ netdata_tier_0_retention }}
+        dbengine tier 0 retention time = {{ netdata_tier_1_retention }}
+        dbengine tier 0 retention time = {{ netdata_tier_2_retention }}
+        dbengine tier 0 retention size = {{ netdata_tier_0_storage }}
+        dbengine tier 0 retention size = {{ netdata_tier_1_storage }}
+        dbengine tier 0 retention size = {{ netdata_tier_2_storage }}
 
 [web]
         web files group = {{ netdata_web_web_files_group }}
